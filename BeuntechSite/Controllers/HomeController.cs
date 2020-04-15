@@ -57,6 +57,7 @@ namespace BeuntechSite.Controllers
         public ActionResult MailGonder(FormCollection collection)
         {
             //bu git
+            //bu git 2
             string name = collection["name"];
             string email = collection["email"];
             string subject = collection["subject"];
