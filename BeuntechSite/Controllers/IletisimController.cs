@@ -47,7 +47,7 @@ namespace BeuntechSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IletisimID,Adres,Tel,Whatsapp,Facebook,Instagram")] Iletisim iletisim)
+        public ActionResult Create(Iletisim iletisim)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace BeuntechSite.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IletisimID,Adres,Tel,Whatsapp,Facebook,Instagram")] Iletisim iletisim)
+        public ActionResult Edit(Iletisim iletisim)
         {
             if (ModelState.IsValid)
             {

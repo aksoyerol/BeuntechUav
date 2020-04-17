@@ -68,11 +68,30 @@ namespace BeuntechSite.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Edit([Bind(Include = "HakkimizdaID,Baslik,Aciklama")] Hakkimizda hakkimizda)
+        public ActionResult Edit(int id,[Bind(Include = "HakkimizdaID,Baslik,Aciklama")] Hakkimizda hakkimizda, HttpPostedFileBase ResimUrl)
         {
+            var sorgu = db.Hakkimizda.Find(id);
             if (ModelState.IsValid)
             {
-                db.Entry(hakkimizda).State = EntityState.Modified;
+               
+
+                if (ResimUrl!=null && ResimUrl.ContentLength>0)
+                {
+                    if (System.IO.File.Exists(Server.MapPath(sorgu.ResimUrl)))
+                    {
+                        System.IO.File.Delete(sorgu.ResimUrl);
+                    }
+
+                    string fileName = $"hakkimizda_{hakkimizda.HakkimizdaID}_{Guid.NewGuid()}.{ResimUrl.ContentType.Split('/')[1]}";
+                    ResimUrl.SaveAs(Server.MapPath($"~/Uploads/Hakkimizda/{fileName}"));
+                    
+                    sorgu.ResimUrl = fileName;
+                }
+
+
+
+                sorgu.Aciklama = hakkimizda.Aciklama;
+                sorgu.Baslik = hakkimizda.Baslik;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

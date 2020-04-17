@@ -1466,8 +1466,43 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Uploads\2440x1578.png" />
+    <Content Include="Uploads\Blog\4c6c3484-5922-431e-aaba-1e02ead96c04.png.png" />
+    <Content Include="Uploads\Blog\APC_0474.jpg.jpg.jpg" />
+    <Content Include="Uploads\Blog\e650ed33-ccb2-4b3c-b6d2-5522a828eff6.png.png" />
+    <Content Include="Uploads\Blog\f8a19b0b-abbc-48e3-b322-80fe34e58edc.png.png" />
+    <Content Include="Uploads\Blog\login.png.png.png" />
+    <Content Include="Uploads\Blog\logo-tasarimiq.png.png.png" />
+    <Content Include="Uploads\Blog\student.png.png.png" />
+    <Content Include="Uploads\Blog\student_male_50px.png.png.png" />
+    <Content Include="Uploads\Blog\teknotouch-logo0.png.png.png" />
     <Content Include="Uploads\drone.jpg" />
+    <Content Include="Uploads\Hakkimizda\hakkimizda_1_151ed867-181d-45ef-bc81-6cbe0de1f80b.jpeg" />
+    <Content Include="Uploads\Hakkimizda\hakkimizda_1_550c3836-3bb7-4105-8f3d-ffb156067a31.jpeg" />
+    <Content Include="Uploads\Hakkimizda\hakkimizda_1_9d5dfd82-6d63-4bcc-a023-5a1b50d7aee7.jpeg" />
+    <Content Include="Uploads\Hakkimizda\hakkimizda_1_e32a26d1-5ae5-4c91-b812-eb9085d6e7de.png" />
     <Content Include="Uploads\logo.png" />
+    <Content Include="Uploads\Projeler\.jpg" />
+    <Content Include="Uploads\Projeler\.png" />
+    <Content Include="Uploads\Projeler\1 %282%29.jpg.jpg" />
+    <Content Include="Uploads\Projeler\2d870910-7dba-4903-af24-12849aaa4417.jpg" />
+    <Content Include="Uploads\Projeler\603c1b99-cc77-4cbf-964d-ec8fc4f75518.jpg" />
+    <Content Include="Uploads\Projeler\87111da3-79f4-4485-80b4-f216afbad2c1.jpg" />
+    <Content Include="Uploads\Projeler\a5fd41c2-7eb1-4cec-a81f-0cb15733af4c.jpg" />
+    <Content Include="Uploads\Projeler\APC_0474.jpg.jpg" />
+    <Content Include="Uploads\Projeler\portfolio-10-300x400.jpg.jpg" />
+    <Content Include="Uploads\Projeler\portfolio-10-300x400.jpg.jpg.jpg" />
+    <Content Include="Uploads\Projeler\portfolio-4-600x400.jpg.jpg.jpg" />
+    <Content Include="Uploads\Slider\0aaf8642-feca-4a98-9c34-d60e7e506ac8.png.png" />
+    <Content Include="Uploads\Slider\dc85875f-6a9d-4f20-a18d-b8f24c10205f.png.png" />
+    <Content Include="Uploads\Slider\f8a19b0b-abbc-48e3-b322-80fe34e58edc.png.png" />
+    <Content Include="Uploads\Slider\gif_1.gif.gif" />
+    <Content Include="Uploads\Slider\IMG-20160928-WA0000.jpg.jpg" />
+    <Content Include="Uploads\Slider\student_male_50px.png.png.png" />
+    <Content Include="Uploads\Takim\0.jpg.jpg" />
+    <Content Include="Uploads\Takim\0aaf8642-feca-4a98-9c34-d60e7e506ac8.png.png" />
+    <Content Include="Uploads\Takim\4c6c3484-5922-431e-aaba-1e02ead96c04.png.png" />
+    <Content Include="Uploads\Takim\portfolio-10-300x400.jpg.jpg.jpg" />
+    <Content Include="Uploads\Takim\student.png.png.png" />
     <Content Include="Views\Shared\index-kenburn-op.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -1489,6 +1524,7 @@
     </Compile>
     <Compile Include="Helpers\ConfigHelper.cs" />
     <Compile Include="Helpers\MailHelper.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\DataContext\BeuntechSiteContext.cs" />
@@ -1574,6 +1610,7 @@
     <Content Include="Views\Home\TakimPartial.cshtml" />
     <Content Include="Views\Home\Detay.cshtml" />
     <Content Include="Views\Home\MailGonder.cshtml" />
+    <Content Include="Views\Home\ContactPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1595,10 +1632,6 @@
     <Folder Include="Content\AdminLayout\assets\ckeditor\samples\plugins\dialog\assets\" />
     <Folder Include="Content\AdminLayout\assets\fullcalendar\jquery\" />
     <Folder Include="Content\AdminLayout\assets\jquery-knob\js\" />
-    <Folder Include="Uploads\Blog\" />
-    <Folder Include="Uploads\Projeler\" />
-    <Folder Include="Uploads\Slider\" />
-    <Folder Include="Uploads\Takim\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

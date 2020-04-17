@@ -1,20 +1,34 @@
 ﻿
 @using BeuntechSite.Models
 @model Hakkimizda
-<div class="col-lg-6" data-aos="fade-left">
-    <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
-        <h3>@Model.Baslik</h3>
-        <p class="font-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
-        </p>
-        <ul>
-            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-        </ul>
-        <p>
-            @Html.Raw(@Model.Aciklama)
-        </p>
+
+<div class="section-title" data-aos="fade-up">
+    <h2>About Us</h2>
+    <p>Magnam dolores commodi suscipit eius consequatur</p>
+</div>
+
+<div class="row">
+    <div class="col-lg-6" data-aos="fade-right">
+        <div class="image">
+            <img src="../../Uploads/Hakkimizda/@Model.ResimUrl" width="1024" height="766" class="img-fluid img-responsive" alt="@Model.Baslik">
+        </div>
+
+    </div>
+    <div class="col-lg-6" data-aos="fade-left">
+        <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+            <h3>@Model.Baslik</h3>
+            <p class="font-italic">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua.
+            </p>
+            <ul>
+                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+            </ul>
+            <p>
+                @Html.Raw(@Model.Aciklama)
+            </p>
+        </div>
     </div>
 </div>

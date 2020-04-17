@@ -10,13 +10,16 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Baslik)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Aciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResimUrl)
         </th>
         <th></th>
     </tr>
@@ -27,8 +30,20 @@
             @Html.DisplayFor(modelItem => item.Baslik)
         </td>
         <td>
-           @Html.Raw(item.Aciklama)
+            @if (item.Aciklama != null && item.Aciklama.Length > 100)
+            {
+                @Html.Raw(item.Aciklama.Substring(0, 100)+"...");
+            }
+            else
+            {
+                @Html.Raw(item.Aciklama)
+            }
         </td>
+
+        <td>
+            <img width="100" height="100" class="img-responsive img-thumbnail" src="../../Uploads/Hakkimizda/@item.ResimUrl"/>
+        </td>
+
         <td>
             @Html.ActionLink("Düzenle", "Edit", new { id=item.HakkimizdaID }) |
      

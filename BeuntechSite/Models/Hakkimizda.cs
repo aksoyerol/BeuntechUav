@@ -13,6 +13,7 @@ namespace BeuntechSite.Models
         [Key]
         public int HakkimizdaID { get; set; }
 
+        public string ResimUrl { get; set; }
       
         public string Baslik { get; set; }
 

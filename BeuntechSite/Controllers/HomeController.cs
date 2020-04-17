@@ -42,6 +42,12 @@ namespace BeuntechSite.Controllers
             return PartialView(db.Takim.ToList().OrderByDescending(x => x.UyeID).Take(6));
         }
 
+        public ActionResult ContactPartial()
+        {
+            return PartialView(db.Iletisim.SingleOrDefault());
+        }
+
+
         public ActionResult Detay(int? id)
         {
             if (id == null)

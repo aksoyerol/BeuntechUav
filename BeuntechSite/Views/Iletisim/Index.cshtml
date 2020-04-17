@@ -27,10 +27,13 @@
         <th>
             @Html.DisplayNameFor(model => model.Instagram)
         </th>
-        <th></th>
+        <th>@Html.DisplayNameFor(model => model.LinkedIn)</th>
+        <th>@Html.DisplayNameFor(model=>model.EMail)</th>
+        <th>Panel</th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Adres)
@@ -48,11 +51,17 @@
             @Html.DisplayFor(modelItem => item.Instagram)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IletisimID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IletisimID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IletisimID })
+            @Html.DisplayFor(modelItem => item.LinkedIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMail)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IletisimID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.IletisimID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IletisimID })
         </td>
     </tr>
-}
+    }
 
 </table>
