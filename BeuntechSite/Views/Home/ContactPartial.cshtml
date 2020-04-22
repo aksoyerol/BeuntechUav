@@ -93,7 +93,7 @@
 
                     <div class="mb-3">
                         <div class="loading">Loading</div>
-                        <div class="error-message"></div>
+                        
                         <div class="sent-message" style="display: none;" id="mesaj">Mesajınız gönderildi ! Size en yakın sürede geri dönüş yapacağız.</div>
                     </div>
                     <div class="text-center"><button class="btn btn-info" type="submit" onclick="mesajGonderildi('mesaj')"><i class="icofont-send-mail">&nbsp;</i>Mesaj Gönder</button></div>
@@ -107,7 +107,7 @@
             function mesajGonderildi(id) {
                 var secilenId = document.getElementById(id);
 
-                setTimeout(secilenId.style.display = "", 5000);
+                secilenId.style.Display = "";
             }
         </script>
     </div>

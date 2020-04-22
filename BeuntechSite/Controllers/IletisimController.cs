@@ -18,9 +18,7 @@ namespace BeuntechSite.Controllers
         // GET: Iletisim
         public ActionResult Index()
         {
-         
-
-            return View();
+            return View(db.Iletisim.ToList());
         }
 
         // GET: Iletisim/Details/5
