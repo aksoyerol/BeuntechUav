@@ -1,0 +1,51 @@
+﻿@using BeuntechSite.Models
+@model IEnumerable<Service>
+@{
+    Layout = null;
+
+}
+
+<section id="why-us" class="why-us">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-lg-7 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-stretch">
+
+                <div class="content" data-aos="fade-up">
+                    <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                    </p>
+                </div>
+
+                <div class="accordion-list">
+                    <ul>
+
+                        @foreach (var item in Model)
+                        {
+                          
+                                <li data-aos="fade-up" data-aos-delay="100">
+                                    <a data-toggle="collapse" class="collapse" href="#accordion-list-@item.Id.ToString()"><span></span> @item.Title <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-@item.Id.ToString()" class="collapse show" data-parent=".accordion-list">
+                                        <p>
+                                            @item.Text
+                                        </p>
+                                    </div>
+                                </li>
+                            
+                        }
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-lg-5 order-1 order-lg-2 align-items-stretch video-box" style='background-image: url("../../Content/BeuntechTheme/assets/img/why-us.jpg");' data-aos="zoom-in">
+                <a href="https://www.youtube.com/watch?v=LIqQNG_q2us" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            </div>
+
+        </div>
+
+    </div>
+</section>

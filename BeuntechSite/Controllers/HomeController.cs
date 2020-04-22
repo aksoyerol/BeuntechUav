@@ -7,6 +7,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.HtmlControls;
+using BeuntechSite.Models;
 using MyEvernote.Common.Helpers;
 
 namespace BeuntechSite.Controllers
@@ -18,16 +19,18 @@ namespace BeuntechSite.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.Goster = true;
+
             return View();
         }
 
 
         // POST: Home/Create
 
-        public ActionResult HakkimizdaPartial()
+        public ActionResult HakkimizdaPartial(Hakkimizda hakkimizda)
         {
-            var list = db.Hakkimizda.FirstOrDefault();
-            return PartialView(list);
+            hakkimizda = db.Hakkimizda.SingleOrDefault();
+            return PartialView(hakkimizda);
         }
 
 
@@ -44,7 +47,17 @@ namespace BeuntechSite.Controllers
 
         public ActionResult ContactPartial()
         {
-            return PartialView(db.Iletisim.SingleOrDefault());
+            return View(db.Iletisim.SingleOrDefault());
+        }
+
+        public ActionResult WhyusPartial()
+        {
+            return View(db.Service.Where(x => x.IsImageActive == true && x.IsQuestion == false).ToList());
+        }
+
+        public ActionResult TestimionalsPartial()
+        {
+            return View(db.Takim.ToList().OrderByDescending(x=>x.UyeID));
         }
 
 
@@ -57,6 +70,11 @@ namespace BeuntechSite.Controllers
 
             var uye = db.Takim.Find(id);
             return View(uye);
+        }
+
+        public ActionResult ServicesPartial()
+        {
+            return View(db.Service.ToList());
         }
 
         [HttpPost]

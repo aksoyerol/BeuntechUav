@@ -22,5 +22,7 @@ namespace BeuntechSite.Models.DataContext
         public DbSet<SiteKimlik> SiteKimlik { get; set; }
         public DbSet<Slider> Slider { get; set; }
         public DbSet<Takim> Takim { get; set; }
+        public DbSet<Service> Service { get; set; }
     }
+
 }

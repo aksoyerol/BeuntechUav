@@ -1,0 +1,29 @@
+﻿@using BeuntechSite.Models
+@model IEnumerable<Takim>
+@{
+    Layout = null;
+}
+
+<section id="testimonials" class="testimonials">
+    <div class="container" data-aos="zoom-in">
+        <div class="quote-icon">
+            <i class="bx bxs-quote-right"></i>
+        </div>
+        <div class="owl-carousel testimonials-carousel">
+            @foreach (var item in Model)
+            {
+
+
+                <div class="testimonial-item">
+                    <p>
+                        @item.Opinion
+                    </p>
+                    <img src="@item.ResimURL" class="testimonial-img" alt="@item.AdSoyad">
+                    <h3>@item.AdSoyad</h3>
+                    <h4>@item.Gorev</h4>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>
