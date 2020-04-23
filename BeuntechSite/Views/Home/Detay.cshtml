@@ -13,14 +13,14 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <h2><i>@Model.AdSoyad</i> Hakkında</h2>
-               
+
                 <ol>
                     <li><a href="@Url.Action("Index","Home")">Anasayfa</a></li>
                     <li>@ViewBag.Title</li>
                     <li>@Model.AdSoyad</li>
                 </ol>
             </div>
-            <hr class="divider"/>
+            <hr class="divider" />
 
         </div>
     </section><!-- End Breadcrumbs -->
@@ -28,34 +28,79 @@
     <section id="portfolio-details" class="portfolio-details" data-aos="fade-up" data-aos-delay="100">
         <div class="container">
 
-            <div class="portfolio-details-container">
+            @*<div class="portfolio-details col-md-4">
+                    <img src="@Model.ResimURL" class="img-fluid rounded" alt="@Model.AdSoyad + @Model.Aciklama">
 
-                <div class="portfolio-details col-md-4">
-                    <img src="@Model.ResimURL" class="img-fluid" alt="@Model.AdSoyad + @Model.Aciklama">
-                    
                 </div>
 
-                <div class="portfolio-info col-md-8">
-                    <h3>Hakkında</h3>
-                    <ul>
-                        <li><strong>Alan</strong>: @Model.UzmanlikAlani</li>
-                        <li><strong>Görevi</strong>: @Model.Gorev</li>
-                        <li><strong>Bölüm</strong>: @Model.Bolum</li>
-                        <li><strong>Telefon</strong>: @Model.Telefon</li>
-                        <li><strong>Web Sitesi</strong>: <a href="@Model.Instagram">www.example.com</a></li>
+                <div class="portfolio-details-container">
+
+                    <div class="portfolio-info col-md-6 mt-0">
+                        <h3>Hakkında</h3>
+                        <ul>
+                            <li><strong>Alan</strong>: @Model.UzmanlikAlani</li>
+                            <li><strong>Görevi</strong>: @Model.Gorev</li>
+                            <li><strong>Bölüm</strong>: @Model.Bolum</li>
+                            <li><strong>Telefon</strong>: @Model.Telefon</li>
+                            <li><strong>Web Sitesi</strong>: <a href="@Model.Instagram">www.example.com</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <hr/>
+                <div class="portfolio-description">
+                    <h2>@Model.AdSoyad</h2>
+                    <div class="row">
+                        <p>
+                            @Model.Aciklama
+                        </p>
+                    </div>
+                </div>*@
+
+
+
+
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    @*<strong class="d-inline-block mb-2 text-success">@Model.AdSoyad</strong>*@
+                    <h3 class="mb-0">HAKKINDA</h3>
+                    <div class="mb-1 text-muted">@Model.Gorev</div>
+
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Görev : </strong>@Model.Gorev</li>
+                        <li class="list-group-item"><strong>Uzmanlık Alanı : </strong>@Model.UzmanlikAlani</li>
+                        <li class="list-group-item"><strong>Bölümü : </strong>@Model.Bolum</li>
+                        <li class="list-group-item"><strong>Mail : </strong>info@beuntechuavteam.com</li>
+                        <li class="list-group-item"><strong>Telefon : </strong>@Model.Telefon</li>
+                        <li class="list-group-item">
+
+                            <a href="http://www.linkedin.com/in/@Model.LinkedIN" target="_blank" class="linkedin"><i class="bx bxl-linkedin" style="font-size: 32px;"></i></a>
+                            <a href="http://www.instagram.com/@Model.Instagram" target="_blank" class="instagram"><i class="bx bxl-instagram" style="font-size: 32px;"></i></a>&nbsp;
+
+
+
+                        </li>
+
                     </ul>
+                    <h5 class="mt-4">Açıklama</h5>
+                    <p class="mb-auto ">@Model.Aciklama</p>
                 </div>
-
+                <div class="col-auto d-none d-lg-block">
+                    @*<img class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></img>*@
+                    <img class="rounded img-responsive img-thumbnail" width="300" height="400" src="@Model.ResimURL" />
+                    <br/>
+                    <button class="btn btn-primary">CV Linki Gelecek</button>
+                </div>
             </div>
 
-            <div class="portfolio-description">
-                <h2>@Model.AdSoyad</h2>
-                <p>
-                    @Model.Aciklama
-                </p>
-            </div>
+
 
         </div>
+
+
+
     </section><!-- End Portfolio Details Section -->
 
 </main><!-- End #main -->

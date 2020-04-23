@@ -12,27 +12,37 @@ namespace BeuntechSite.Controllers
     {
         BeuntechSiteContext db = new BeuntechSiteContext();
         // GET: Admin
+
+        [Route("YonetimPaneli")]
         public ActionResult Index()
         {
             return View();
         }
 
+        [Route("YonetimPaneli/Giris")]
         public ActionResult Login()
         {
             return View();
 
         }
 
+
         [HttpPost]
+        
         public ActionResult Login(Admin admin)
         {
-            var login = db.Admin.Where(x => x.EPosta == admin.EPosta).SingleOrDefault();
+            var login = db.Admin.SingleOrDefault(x => x.EPosta == admin.EPosta && x.Sifre == admin.Sifre);
 
-            if (login.EPosta == admin.EPosta && login.Sifre == admin.Sifre)
+            if (login != null)
             {
-                Session["AdminID"] = login.AdminID;
-                Session["EPosta"] = login.EPosta;
-                return RedirectToAction("Index", "Admin");
+
+            
+                if (login.EPosta == admin.EPosta && login.Sifre == admin.Sifre)
+                {
+                    Session["AdminID"] = login.AdminID;
+                    Session["EPosta"] = login.EPosta;
+                    return RedirectToAction("Index", "Admin");
+                }
             }
             ViewBag.Uyari = "Kullanıcı adı veya şifre geçersiz !";
             return View(admin);

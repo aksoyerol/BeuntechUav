@@ -1,7 +1,9 @@
-﻿@model IEnumerable<BeuntechSite.Models.Takim>
+﻿
+@using BeuntechSite.Helpers;
 
+@model IEnumerable<BeuntechSite.Models.Takim>
 
-    <section id="takim" class="section-bg team">
+<section id="takim" class="section-bg team">
     <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -15,7 +17,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="zoom-in" data-aos-delay="100">
                         <div class="member-img">
-                            <img src="@item.ResimURL" style="height: 400px; width: 300px;" class="img-fluid img-responsive" alt="">
+                            <img src="@item.ResimURL" style="height: 300px; width: 300px;"  class="img-fluid img-responsive" alt="">
                             <div class="social">
                                 <a href=""><i class="icofont-twitter"></i></a>
                                 <a href=""><i class="icofont-facebook"></i></a>
@@ -27,8 +29,10 @@
                             <h4>@item.AdSoyad</h4>
                             <span>@item.Gorev</span>
                             <p>@item.Aciklama</p>
+                            <a href="/Detay/@SeoHelper.ToSeoUrl(item.AdSoyad).ToLower()-@item.UyeID">
+                                <button class="btn btn-primary btn-sm">Daha fazla..</button></a>
 
-                            @Html.ActionLink("Daha fazla..", "Detay", new { id = item.UyeID }, new { @class = "btn btn-primary btn-sm" })
+                            @*@Html.ActionLink("Daha fazla..", "Detay", new { id = item.UyeID }, new { @class = "btn btn-primary btn-sm" })*@
                         </div>
                     </div>
                 </div>

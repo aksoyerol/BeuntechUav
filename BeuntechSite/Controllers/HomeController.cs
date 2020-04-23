@@ -17,6 +17,9 @@ namespace BeuntechSite.Controllers
         private BeuntechSiteContext db = new BeuntechSiteContext();
 
         // GET: Home
+
+        [Route("")]
+        [Route("Anasayfa")]
         public ActionResult Index()
         {
             ViewBag.Goster = true;
@@ -27,40 +30,40 @@ namespace BeuntechSite.Controllers
 
         // POST: Home/Create
 
-        public ActionResult HakkimizdaPartial(Hakkimizda hakkimizda)
+        
+        public ActionResult HakkimizdaPartial()
         {
-            hakkimizda = db.Hakkimizda.SingleOrDefault();
-            return PartialView(hakkimizda);
+            return View(db.Hakkimizda.FirstOrDefault());
         }
 
-
+        
         public ActionResult BlogPartial()
         {
             return PartialView(db.Blog.Include("Kategori").ToList().OrderByDescending(x => x.BlogID).Take(3));
 
         }
-
+        
         public ActionResult TakimPartial()
         {
             return PartialView(db.Takim.ToList().OrderByDescending(x => x.UyeID).Take(6));
         }
-
+        
         public ActionResult ContactPartial()
         {
             return View(db.Iletisim.SingleOrDefault());
         }
-
+        
         public ActionResult WhyusPartial()
         {
             return View(db.Service.Where(x => x.IsImageActive == true && x.IsQuestion == false).ToList());
         }
-
+        
         public ActionResult TestimionalsPartial()
         {
-            return View(db.Takim.ToList().OrderByDescending(x=>x.UyeID));
+            return View(db.Takim.ToList().OrderByDescending(x => x.UyeID));
         }
 
-
+        [Route("Detay/{AdSoyad}-{id:int}")]
         public ActionResult Detay(int? id)
         {
             if (id == null)
@@ -71,13 +74,14 @@ namespace BeuntechSite.Controllers
             var uye = db.Takim.Find(id);
             return View(uye);
         }
-
+        
         public ActionResult ServicesPartial()
         {
             return View(db.Service.ToList());
         }
 
         [HttpPost]
+        
         public ActionResult MailGonder(FormCollection collection)
         {
             //bu git

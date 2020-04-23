@@ -1136,6 +1136,7 @@
     <Content Include="Content\SiteLayout\pages\shop\shop-single.html" />
     <Content Include="Content\SiteLayout\pages\team-1.html" />
     <Content Include="Content\SiteLayout\pages\team-2.html" />
+    <Content Include="Content\error.css" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -1515,6 +1516,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HakkimizdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Home2Controller.cs" />
@@ -1530,6 +1532,7 @@
     </Compile>
     <Compile Include="Helpers\ConfigHelper.cs" />
     <Compile Include="Helpers\MailHelper.cs" />
+    <Compile Include="Helpers\SeoHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Blog.cs" />
@@ -1630,6 +1633,7 @@
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Home\WhyusPartial.cshtml" />
     <Content Include="Views\Home\TestimionalsPartial.cshtml" />
+    <Content Include="Views\Error\PageError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
